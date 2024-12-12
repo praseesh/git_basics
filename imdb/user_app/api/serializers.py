@@ -6,6 +6,7 @@ class RegistrationSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ['username', 'email', 'password', 'password2']  
+        
     def save(self, **kwargs):
         password = self.validated_data['password']
         password2 = self.validated_data.get('password2')
